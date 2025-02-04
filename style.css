@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+/*body {
+  background-color: #232323;
+  margin: 0;
+  font-family: "Lato", "Helvetica";
+}
+
+h1 {
+  width: 500px;
+  text-align: center;
+  color: white;
+  background-color: #F9690E;
+  margin: 0 auto;
+  font-size: 2.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 20px 0;
+  letter-spacing: 7px;
+}
+
+.container {
+  width: 500px;
+  margin: 6px auto;
+}
+
+.circle {
+  background-color: purple;
+  width: 30%;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.5%;
+  border-radius: 50%;
+  transition: background 0.8s;
+  -webkit-transition: background 0.8s;
+  -moz-transition: background 0.8s;
+}
+
+#colorDisplay {
+  font-size: 130%;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
+  font-size: 20px;
+}
+
+#stripe {
+  background-color: #fff;
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.selected {
+  color: white;
+  background: #F9690E;
+}
+
+button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  font-family: "Lato", "Helvetica";
+  height: 100%;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: #F9690E;
+  font-size: inherit;
+  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  outline: none;
+}
+
+button:hover {
+  color: white;
+  background-color: #F9690E;
+  color: white;
+}*/
+
+body {
+    text-align: center;
+    font-family: "Lato", "Helvetica";
+    background-color: #232323;
+}
+.container h1
+{
+    width: 750px;
+}
+h1 {
+    width: 400px;
+    text-align: center;
+    color: white;
+    background-color: #b984c4;
+    border-radius: 50px;
+    margin: 0 auto;
+    font-size: 2.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.4;
+    padding: 20px 0;
+    letter-spacing: 7px;
+  }
+.container {
+    margin-top: 50px;
+}
+.color-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.circle:hover {
+    transform: scale(1.1);
+}
+.fade-out {
+    opacity: 0.5;
+    transition: opacity 0.5s;
+}
+.celebrate {
+    animation: pop 0.5s ease-in-out;
+}
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+#message {
+    font-size: 20px;
+    margin-top: 10px;
+}
+#score {
+    font-size: 18px;
+    margin-top: 15px;
+}
+#colorBox {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 2px solid black;
+}
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    font-family: "Lato", "Helvetica";
+    height: 100%;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    color: #b984c4;
+    font-size: inherit;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all .5s;
+    outline: none;
+}
+button:hover {
+    color: white;
+    background-color: #b984c4;
+    color: white;
+    border-radius: 40px;
+}
+#stripe {
+
+    width: 500px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+  }

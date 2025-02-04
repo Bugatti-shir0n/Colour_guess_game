@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color guessing game</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!--<div class="container">
+        <div class="game">
+          <div class="top-section">
+            <h1>Guess the color <br/><span id="colorDisplay"></span></h1>
+            <div id="stripe">
+              <button id="reset">New Colors</button>
+              <span id="message"></span>
+              <button class="mode">Easy</button>
+              <button class="mode">Medium</button>
+              <button class="mode selected">Hard</button>
+            </div>
+          </div>
+      
+          <div class="container">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+          </div>
+        </div>
+      </div>-->
+
+    <div class="container">
+        <h1 data-testid="gameInstructions">Guess the correct color:</h1>
+        <div id="colorBox" data-testid="colorBox"></div>
+        <div id="stripe">
+            <button id="refresh" data-testid="refreshButton">Refresh</button>
+            <span id="message" data-testid="gameStatus"></span>
+        </div>
+        <div class="color-container">
+            <div class="circle" data-testid="colorOption"></div>
+            <div class="circle" data-testid="colorOption"></div>
+            <div class="circle" data-testid="colorOption"></div>
+            <div class="circle" data-testid="colorOption"></div>
+            <div class="circle" data-testid="colorOption"></div>
+            <div class="circle" data-testid="colorOption"></div>
+        </div>
+
+        <p id="score" data-testid="score">Score: 0</p>
+
+        <div id="stripe">
+            <button id="reset" data-testid="newGameButton">New Game</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+            let targetColor = "";
+            let score = 0;
+            
+            const colorBox = document.getElementById("colorBox");
+            const message = document.getElementById("message");
+            const scoreDisplay = document.getElementById("score");
+            const circles = document.querySelectorAll(".circle");
+            const resetButton = document.getElementById("reset");
+            const refreshButton = document.getElementById("refresh");
+            
+            function newGame() {
+                targetColor = colors[Math.floor(Math.random() * colors.length)];
+                colorBox.style.backgroundColor = targetColor;
+                message.textContent = "";
+                circles.forEach(circle => {
+                    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                    circle.style.backgroundColor = randomColor;
+                    circle.style.opacity = "1";
+                    circle.classList.remove("fade-out", "celebrate");
+                    circle.addEventListener("click", function () {
+                        if (this.style.backgroundColor === targetColor) {
+                            message.textContent = "Correct! 🎉";
+                            this.classList.add("celebrate");
+                            score++;
+                        } else {
+                            message.textContent = "Wrong! ❌";
+                            this.classList.add("fade-out");
+                        }
+                        scoreDisplay.textContent = `Score: ${score}`;
+                    });
+                });
+            }
+            
+            resetButton.addEventListener("click", newGame);
+            refreshButton.addEventListener("click", function () {
+                location.reload();
+            });
+            
+            newGame();
+        });
+    </script>
+</body>
+</html>
